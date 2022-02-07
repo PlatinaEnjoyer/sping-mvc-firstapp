@@ -1,7 +1,15 @@
 package ru.shirikov.mvcsping.models;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class Person {
     private int id;
+
+
+    @NotEmpty(message = "Enter name")
+    @Size(min = 2, max = 30, message = "Name size is incorrect")
+    // @Min - для чисел @Email
     private String name;
 
     public int getId() {
